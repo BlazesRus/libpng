@@ -12216,6 +12216,7 @@ int main(int argc, char **argv)
 
    /* This is required because some very minimal configurations do not use it:
     */
+
    UNUSED(fail)
    return 0;
 }

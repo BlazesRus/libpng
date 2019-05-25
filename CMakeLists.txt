@@ -39,6 +39,9 @@ include(GNUInstallDirs)
 option(PNG_BUILD_ZLIB "Custom zlib Location, else find_package is used" OFF)
 
 if(NOT PNG_BUILD_ZLIB)
+  
+  set (ZLIB_LIBRARY D:/Builds/Windows/build_msvc15_x64/Release/lib/zlib.lib )
+  set(ZLIB_INCLUDE_DIR D:/Builds/Windows/build_msvc15_x64/Release/include/zlib)
   find_package(ZLIB REQUIRED)
   include_directories(${ZLIB_INCLUDE_DIR})
 endif()
