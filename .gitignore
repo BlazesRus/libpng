@@ -25,12 +25,17 @@
 
 .DS_Store
 
-*.lnk
-.vs
 *.VC.db
 *.vcxproj.user
 *.obj
 *.lst
 *.h.included
 
+*.lnk
+*.url
+.vs
+Debug
+Release
+Win32
+x64
 build_*
