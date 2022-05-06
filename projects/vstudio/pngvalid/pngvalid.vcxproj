@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug Library|Win32">
-      <Configuration>Debug Library</Configuration>
+    <ProjectConfiguration Include="DebugLibrary|Win32">
+      <Configuration>DebugLibrary</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug Library|x64">
-      <Configuration>Debug Library</Configuration>
+    <ProjectConfiguration Include="DebugLibrary|x64">
+      <Configuration>DebugLibrary</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug Library|ARM64">
-      <Configuration>Debug Library</Configuration>
+    <ProjectConfiguration Include="DebugLibrary|ARM64">
+      <Configuration>DebugLibrary</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,16 +21,16 @@
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release Library|Win32">
-      <Configuration>Release Library</Configuration>
+    <ProjectConfiguration Include="ReleaseLibrary|Win32">
+      <Configuration>ReleaseLibrary</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release Library|x64">
-      <Configuration>Release Library</Configuration>
+    <ProjectConfiguration Include="ReleaseLibrary|x64">
+      <Configuration>ReleaseLibrary</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release Library|ARM64">
-      <Configuration>Release Library</Configuration>
+    <ProjectConfiguration Include="ReleaseLibrary|ARM64">
+      <Configuration>ReleaseLibrary</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
@@ -77,15 +77,15 @@
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|ARM64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|ARM64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
@@ -101,15 +101,15 @@
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|ARM64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|ARM64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets />
   </PropertyGroup>
@@ -212,7 +212,7 @@
       <Inputs>$(OutDir)pngvalid.exe</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>$(WarningLevel)</WarningLevel>
@@ -245,7 +245,7 @@
       <Inputs>$(OutDir)pngvalid.exe</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>$(WarningLevel)</WarningLevel>
@@ -278,7 +278,7 @@
       <Inputs>$(OutDir)pngvalid.exe</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|ARM64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|ARM64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -416,7 +416,7 @@
       <Inputs>$(OutDir)pngvalid.exe</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|Win32'">
     <ClCompile>
       <WarningLevel>$(WarningLevel)</WarningLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -452,7 +452,7 @@
       <Inputs>$(OutDir)pngvalid.exe</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|x64'">
     <ClCompile>
       <WarningLevel>$(WarningLevel)</WarningLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -488,7 +488,7 @@
       <Inputs>$(OutDir)pngvalid.exe</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|ARM64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|ARM64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>

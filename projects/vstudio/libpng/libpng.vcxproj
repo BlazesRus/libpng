@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug Library|Win32">
-      <Configuration>Debug Library</Configuration>
+    <ProjectConfiguration Include="DebugLibrary|Win32">
+      <Configuration>DebugLibrary</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug Library|x64">
-      <Configuration>Debug Library</Configuration>
+    <ProjectConfiguration Include="DebugLibrary|x64">
+      <Configuration>DebugLibrary</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug Library|ARM64">
-      <Configuration>Debug Library</Configuration>
+    <ProjectConfiguration Include="DebugLibrary|ARM64">
+      <Configuration>DebugLibrary</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,16 +21,16 @@
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release Library|Win32">
-      <Configuration>Release Library</Configuration>
+    <ProjectConfiguration Include="ReleaseLibrary|Win32">
+      <Configuration>ReleaseLibrary</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release Library|x64">
-      <Configuration>Release Library</Configuration>
+    <ProjectConfiguration Include="ReleaseLibrary|x64">
+      <Configuration>ReleaseLibrary</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release Library|ARM64">
-      <Configuration>Release Library</Configuration>
+    <ProjectConfiguration Include="ReleaseLibrary|ARM64">
+      <Configuration>ReleaseLibrary</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
@@ -69,10 +69,10 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Library|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLibrary|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -87,13 +87,13 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Library|ARM64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLibrary|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -139,7 +139,7 @@
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug Library'">
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='DebugLibrary'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>$(WarningLevel)</WarningLevel>
@@ -197,7 +197,7 @@
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release Library'">
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='ReleaseLibrary'">
     <ClCompile>
       <WarningLevel>$(WarningLevel)</WarningLevel>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -235,20 +235,20 @@
       <DeploymentContent Condition="'$(Platform)'=='ARM64'">true</DeploymentContent>
       <ExcludedFromBuild Condition="'$(Platform)'!='ARM64'">true</ExcludedFromBuild>
       <PrecompiledHeader Condition="'$(Platform)'=='ARM64'">NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='Debug Library')">WIN32;_DEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='Debug Library')">WIN32;NDEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugLibrary')">WIN32;_DEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugLibrary')">WIN32;NDEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="..\..\..\arm\filter_neon_intrinsics.c">
       <ExcludedFromBuild Condition="'$(Platform)'!='ARM64'">true</ExcludedFromBuild>
       <PrecompiledHeader Condition="'$(Platform)'=='ARM64'">NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='Debug Library')">WIN32;_DEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='Debug Library')">WIN32;NDEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugLibrary')">WIN32;_DEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugLibrary')">WIN32;NDEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="..\..\..\arm\palette_neon_intrinsics.c">
       <ExcludedFromBuild Condition="'$(Platform)'!='ARM64'">true</ExcludedFromBuild>
       <PrecompiledHeader Condition="'$(Platform)'=='ARM64'">NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='Debug Library')">WIN32;_DEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='Debug Library')">WIN32;NDEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugLibrary')">WIN32;_DEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='ARM64' And ('$(Configuration)'=='Debug' Or '$(Configuration)'=='DebugLibrary')">WIN32;NDEBUG;_WINDOWS;PNG_ARM_NEON_OPT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="..\..\..\png.c">
       <PrecompiledHeader>Create</PrecompiledHeader>
