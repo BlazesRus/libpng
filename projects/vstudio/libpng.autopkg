@@ -1,0 +1,79 @@
+configurations {
+   Toolset {
+      key : "PlatformToolset";
+      choices: { v142 };
+   };
+}
+
+nuget
+{
+   nuspec
+   {
+      id = libpng-tsc-package;
+      version: 2.0.1;
+      title: libpng;
+      authors: { TechSmith Corporation };
+      owners: { TechSmith Corporation };
+      licenseUrl: "https://github.com/TechSmith/libpng/blob/libpng16/LICENSE";
+      projectUrl: "https://github.com/TechSmith/libpng";
+      iconUrl: "http://www.libpng.org/pub/png/img_png/pnglogo-blk.jpg";
+      requireLicenseAcceptance: false;
+      summary: libpng recompiled from source;
+      description: @"Portable Network Graphics support.  Compiled with Visual Studio 2017 as a static library.
+         New features:
+            v2.0.1 Fixed SourceLink symbols
+            v2.0.0.0: Updated to Visual Studio 2019
+            v1.6.18.6: Updated to Visual Studio 2017
+         Breaking Changes:"
+      copyright: "";
+      tags: { native, third-party, vs2019, open source, cpp, static, dynamiccpp };
+   };
+
+   dependencies
+   {
+      packages:
+      {
+         zlib-tsc-package/2.0.1;
+      };
+   };
+
+   files
+   {
+      nestedInclude:
+      { 
+         #destination = ${d_include}libpng; 
+         ..\..\png.h;
+         ..\..\pngconf.h;
+         ..\..\pnglibconf.h;
+      };
+      vcpdb:          { #destination = ${d_lib}; };
+
+      ("Win32,x64", "v142", "Debug,Release") =>
+      {
+         [${0},${1},${2}]
+         {
+            lib:    { lib\${0}\${2}\libpng16.lib; }
+            vcpdb:  { lib\${0}\${2}\libpng16.pdb; }
+         };
+      };
+   };
+
+   props
+   {
+      // Additional declarations to insert into consuming projects before most of the
+      // project settings. (These may be modified in visual studio by a developer
+      // consuming this package.)
+      // This node is typically not needed for most packages and may be omitted.
+   }
+
+   targets
+   {
+      // Additional declarations to insert into consuming projects after most of the
+      // project settings. (These may NOT be modified in visual studio by a developer
+      // consuming this package.)
+      // This node is often used to set defines that are required that must be set by
+      // the consuming project in order to correctly link to the libraries in this
+      // package.  Such defines may be set either globally or only set under specific
+      // conditions.
+    }
+}

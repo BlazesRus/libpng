@@ -1,5 +1,4 @@
 
-cc_defs = /inc=$(ZLIBSRC)
 c_deb =
 
 .ifdef __DECC__
