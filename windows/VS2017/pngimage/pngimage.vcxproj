@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{549C4CF2-72DC-43FC-85BE-E24B0E5DA318}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>pngimage</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp1n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp1n3p08.png"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Performing PNG Image Tests..</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp1n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp1n3p08.png"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Performing PNG Image Tests..</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp1n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp1n3p08.png"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Performing PNG Image Tests..</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\basn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g01.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g02.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn0g04.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ftp1n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn4a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\ibasn6a16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbbn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn2c16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbgn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbrn2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn0g16.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbwn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftbyn3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n0g08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n2c08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp0n3p08.png"
+$(OutDir)pngimage.exe --exhaustive --list-combos --log "..\..\..\contrib\pngsuite\iftp1n3p08.png"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Performing PNG Image Tests..</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pnglib\pnglib.vcxproj">
+      <Project>{02a8b4a6-6a7c-4be6-ae60-87e2ef39c9e6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\contrib\libtests\pngimage.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
