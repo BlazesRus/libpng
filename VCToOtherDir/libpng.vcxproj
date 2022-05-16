@@ -121,7 +121,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(ZLibLibrary)</AdditionalDependencies>
       <Version>16</Version>
-<!--       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories> -->
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
@@ -151,7 +150,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(ZLibLibrary)</AdditionalDependencies>
       <Version>16</Version>
-      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='DebugLibrary'">
