@@ -20,7 +20,7 @@ build with this 'solution'.  Please read and edit zlib.props first.
 You will probably not be familiar with the contents of zlib.props -
 do not worry, it is mostly harmless.
 
-This is all you need to do to build the 'release' and 'ReleaseLibrary'
+This is all you need to do to build the 'release' and 'ReleaseStatic'
 configurations.
 
 Debugging
@@ -44,7 +44,7 @@ it is not then your application will crash inside libpng16.dll as soon
 as libpng tries to read from a file handle you pass in.
 
 If you do not want to use the DLL, and prefer static linking instead,
-you may choose the 'ReleaseLibrary' configuration.  This is built with
+you may choose the 'ReleaseStatic' configuration.  This is built with
 a non-standard runtime library - the "MultiThreaded" version.  When you
 build your application, it must be compiled with this option (/MT),
 otherwise it will not build (if you are lucky) or it will crash (if you
