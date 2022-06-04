@@ -62,7 +62,7 @@
     <ParentOfRoot>$([System.IO.Path]::GetFullPath('$(RootDirectory)\..\'))</ParentOfRoot>
   </PropertyGroup>
   <PropertyGroup>
-    <ZLibDir>$([System.IO.Path]::GetFullPath('$(ParentOfRoot)zlib-win64\'))</ZLibDir>
+    <ZLibDir>$([System.IO.Path]::GetFullPath('$(ParentOfRoot)zlib\'))</ZLibDir>
     <ZLibPngDir>$([System.IO.Path]::GetFullPath('$(ParentOfRoot)TangariaCoop\src\win\'))</ZLibPngDir>
     <ZLibPngLibDir Condition="'$(Configuration)' != 'ReleaseC99'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)$(Platform)\'))</ZLibPngLibDir>
     <ZLibPngLibDir Condition="'$(Configuration)' == 'ReleaseC99'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)Clang$(Platform)\'))</ZLibPngLibDir>
