@@ -67,7 +67,7 @@
     <ZLibPngLibDir Condition="'$(Configuration)' != 'ReleaseC99'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)$(Platform)\'))</ZLibPngLibDir>
     <ZLibPngLibDir Condition="'$(Configuration)' == 'ReleaseC99'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)Clang$(Platform)\'))</ZLibPngLibDir>
     <ZLibLibrary>$([System.IO.Path]::GetFullPath('$(ZLibPngLibDir)zlib.lib'))</ZLibLibrary>
-	<IncludePath>$(ZLibDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ZLibDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <Choose>
     <When Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'ReleaseC99' Or '$(Configuration)' == 'ReleaseStatic' ">
@@ -88,12 +88,12 @@
   <Choose>
     <When Condition="'$(Configuration)'=='DebugStatic' Or '$(Configuration)'=='ReleaseStatic'">
       <PropertyGroup>
-          <ConfigurationType>StaticLibrary</ConfigurationType>
+        <ConfigurationType>StaticLibrary</ConfigurationType>
       </PropertyGroup>
     </When>
     <Otherwise>
       <PropertyGroup>
-         <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
       </PropertyGroup>
     </Otherwise>
   </Choose>
@@ -172,7 +172,7 @@
       <DisableSpecificWarnings>$(DisableSpecificWarnings);4464;5045</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ZLibDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>$(TreatWarningAsError)</TreatWarningAsError>
-      <Optimization>Full</Optimization>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -223,7 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\scripts\pngwin.rc">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

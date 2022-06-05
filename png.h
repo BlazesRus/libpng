@@ -278,8 +278,8 @@
  */
 
 /* Version information for png.h - this should match the version in png.c */
-#define PNG_LIBPNG_VER_STRING "1.6.38.git"
-#define PNG_HEADER_VERSION_STRING " libpng version 1.6.38.git\n"
+#define PNG_LIBPNG_VER_STRING "1.6.38.git-BlazesRus"
+#define PNG_HEADER_VERSION_STRING " libpng version 1.6.38.git-BlazesRus\n"
 
 #define PNG_LIBPNG_VER_SONUM   16
 #define PNG_LIBPNG_VER_DLLNUM  16

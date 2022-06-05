@@ -98,8 +98,8 @@ BEGIN
 #ifdef PNG_USER_PRIVATEBUILD
       VALUE "PrivateBuild", PNG_USER_PRIVATEBUILD "\000"
 #endif /* PNG_USER_PRIVATEBUILD */
-      VALUE "ProductName", "LibPNG\000"
-      VALUE "ProductVersion", "1\000"
+      VALUE "ProductName", "LibPNG(BlazesRus Fork)\000"
+      VALUE "ProductVersion", "(https://github.com/BlazesRus/libpng)\000"
 #ifdef PNG_LIBPNG_SPECIALBUILD
       VALUE "SpecialBuild", PNG_LIBPNG_SPECIALBUILD "\000"
 #endif /* PNG_LIBPNG_SPECIALBUILD */
