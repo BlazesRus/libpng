@@ -56,6 +56,11 @@
     <RootNamespace>libpng</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <CharacterSet>MultiByte</CharacterSet>
+  <!--<Import Project="$(SolutionDir)\zlib.props"  Condition="'$(Platform)'=='Win32'"/>-->
+	<WindowsSDKDesktopARMSupport>true</WindowsSDKDesktopARMSupport>
+	<WarningLevel>EnableAllWarnings</WarningLevel>
+	<TreatWarningAsError>true</TreatWarningAsError>
+    <DisableSpecificWarnings>4255;4668;4710;4711;4746;4820;4996</DisableSpecificWarnings>
   </PropertyGroup>
   <PropertyGroup Label="UserMacros">
     <RootDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)..\..\'))</RootDirectory>
@@ -65,12 +70,12 @@
     <ZLibDir>$([System.IO.Path]::GetFullPath('$(ParentOfRoot)zlib\'))</ZLibDir>
     <ZLibPngDir>$([System.IO.Path]::GetFullPath('$(ParentOfRoot)TangariaCoop\src\win\'))</ZLibPngDir>
     <ZLibPngLibDir Condition="'$(Configuration)' != 'ReleaseC99'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)$(Platform)\'))</ZLibPngLibDir>
-    <ZLibPngLibDir Condition="'$(Configuration)' == 'ReleaseC99'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)Clang$(Platform)\'))</ZLibPngLibDir>
+    <ZLibPngLibDir Condition="'$(PlatformToolset)'=='ClangCL'">$([System.IO.Path]::GetFullPath('$(ZLibPngDir)Clang$(Platform)\'))</ZLibPngLibDir>
     <ZLibLibrary>$([System.IO.Path]::GetFullPath('$(ZLibPngLibDir)zlib.lib'))</ZLibLibrary>
     <IncludePath>$(ZLibDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <Choose>
-    <When Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'ReleaseC99' Or '$(Configuration)' == 'ReleaseStatic' ">
+    <When Condition="'$(Configuration)' == 'Release' Or '$(PlatformToolset)'=='ClangCL' Or '$(Configuration)' == 'ReleaseStatic' ">
       <PropertyGroup>
         <ConfigurationStyle>Release</ConfigurationStyle>
         <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -99,9 +104,9 @@
   </Choose>
   <PropertyGroup Label="ToolsetOptions">
     <!-- 142 for VS2019(Default);143 for VS2022-->
-    <PlatformToolset Condition="'$(Configuration)' == 'ReleaseC99'">ClangCL</PlatformToolset>
-    <PlatformToolset Condition="'$(Configuration)' != 'ReleaseC99' And '$(VisualStudioVersion)' != '17'">v142</PlatformToolset>
-    <PlatformToolset Condition="'$(Configuration)' != 'ReleaseC99' And '$(VisualStudioVersion)' == '17'">v143</PlatformToolset>
+    <PlatformToolset Condition="'$(Configuration)' == 'ReleaseC99' Or '$(Configuration)' == 'DebugC99'">ClangCL</PlatformToolset>
+    <PlatformToolset Condition="'$(PlatformToolset)'!='ClangCL' And '$(VisualStudioVersion)' != '17'">v142</PlatformToolset>
+    <PlatformToolset Condition="'$(PlatformToolset)'!='ClangCL' And '$(VisualStudioVersion)' == '17'">v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="GlobalsPart2">
@@ -158,6 +163,8 @@
       <WarningLevel>$(WarningLevel)</WarningLevel>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary Condition="'$(ConfigurationType)'=='DynamicLibrary'">MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(ConfigurationType)'=='StaticLibrary'">MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions Condition="'$(CStandardType)'=='Modern'">%(PreprocessorDefinitions);UsingModernC;</PreprocessorDefinitions>
@@ -175,6 +182,7 @@
       <AdditionalIncludeDirectories>$(ZLibDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>$(TreatWarningAsError)</TreatWarningAsError>
       <Optimization>MaxSpeed</Optimization>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -186,6 +194,9 @@
       </Version>
       <LinkStatus>true</LinkStatus>
     </Link>
+    <Lib>
+      <LinkTimeCodeGeneration Condition="'$(ConfigurationType)'=='StaticLibrary'">true</LinkTimeCodeGeneration>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\arm\arm_init.c">
